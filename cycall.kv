@@ -1,0 +1,40 @@
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+            Color:
+                rgb: 0.5843137254901961, 0.5843137254901961, 0.5843137254901961
+        Label:
+            color: (1.0, 0.2, 0.2, 1)
+            outline_color: (1, 0, 0)
+            size_hint: (1, .1)
+            text_size: root.width, None
+            halign: 'left'
+            valign: 'middle'
+            text: 'Closely recalls:'
+        ListView:
+        #    size_hint: (1, .8)
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: (1, .1)
+            Button:
+                text: 'Goto settings'
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'settings'
+            Button:
+                text: 'Quit'
+
+<SettingsScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: 'My settings button'
+        Button:
+            text: 'Back to menu'
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'recalls'
