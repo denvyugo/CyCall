@@ -1,3 +1,18 @@
+<Item@BoxLayout>:
+    color: []
+    item_text: ''
+
+    Label
+        canvas.before:
+            Color:
+                rgba: root.color
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        text: root.item_text
+        color: 0, 0, 0, 1
+
+
 <MainScreen>:
     BoxLayout:
         orientation: 'vertical'
@@ -22,8 +37,20 @@
             halign: 'left'
             valign: 'middle'
             text: 'Closely recalls:'
-        ListView:
-        #    size_hint: (1, .8)
+        RecycleView:
+            id: rv
+            key_size: 'height'
+            key_viewclass: 'viewclass'
+
+            RecycleBoxLayout:
+                id: box
+                default_size: None, None
+                default_size_hint: 1, None
+                size_hint_y: None
+                height: self.minimum_height
+                orientation: 'vertical'
+                spacing: dp(10)
+                padding: dp(5)
         BoxLayout:
             orientation: 'horizontal'
             size_hint: (1, .1)
