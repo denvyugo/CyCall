@@ -57,7 +57,8 @@
             size_hint: (1, .1)
             Button:
                 text: 'Goto About'
-                #on_press:
+                on_press:
+                    root.switch_screen('about')
                 #    root.manager.transition.direction = 'right'
                 #    root.manager.current = 'settings'
             Button:

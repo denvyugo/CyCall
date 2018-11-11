@@ -1,3 +1,4 @@
+from kivy.app import App
 from kivy.uix.screenmanager import Screen
 from kivy.lang import Builder
 from kivy.metrics import dp
@@ -23,3 +24,5 @@ class RecentScreen(Screen):
             })
         self.ids.rv.data = listitems
 
+    def switch_screen(self, screen_name):
+        App.get_running_app().switch_screen(screen_name)
