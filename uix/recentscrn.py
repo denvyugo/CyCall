@@ -7,6 +7,7 @@ import os
 puix = os.getcwd()
 
 class RecentScreen(Screen):
+    '''экран списка напоминаний'''
     events_callback = ObjectProperty(None)
 
     Builder.load_file(f'{puix}\\uix\\recentscrn.kv')

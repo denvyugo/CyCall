@@ -5,7 +5,8 @@ import os
 
 puix = os.getcwd()
 
-class About(Screen):
+class AboutScreen(Screen):
+    '''Экран о приложении'''
     events_callback = ObjectProperty(None)
 
     Builder.load_file(f'{puix}\\uix\\about.kv')
