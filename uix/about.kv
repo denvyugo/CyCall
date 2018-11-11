@@ -16,12 +16,19 @@
                     size: self.size
             color: (1.0, 0.2, 0.2, 1)
             outline_color: (1, 0, 0)
-            size_hint: (1, .9)
+            size_hint: (1, .1)
             text_size: root.width, None
             padding_x: 10
             halign: 'left'
             valign: 'middle'
-            text: 'CyCall version 0.0.1'
+            text: 'CyCall'
+        Label:
+            color: (0.0, 0.0, 0.0, 1)
+            size_hint: (1, .8)
+            text_size: root.width, None
+            halign: 'center'
+            valign: 'middle'
+            text: 'version 0.0.1\ndenvyugo\n2018'
         BoxLayout:
             orientation: 'horizontal'
             size_hint: (1, .1)
