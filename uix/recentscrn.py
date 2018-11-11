@@ -1,4 +1,4 @@
-from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.screenmanager import Screen
 from kivy.lang import Builder
 from kivy.metrics import dp
 from kivy.properties import ObjectProperty
@@ -6,7 +6,7 @@ import os
 
 puix = os.getcwd()
 
-class RecentScreen(BoxLayout):
+class RecentScreen(Screen):
     events_callback = ObjectProperty(None)
 
     Builder.load_file(f'{puix}\\uix\\recentscrn.kv')

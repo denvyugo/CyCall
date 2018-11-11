@@ -15,49 +15,50 @@
 		color: 0, 0, 0, 1
 
 <RecentScreen>:
-    orientation: 'vertical'
-    canvas:
-        Rectangle:
-            pos: self.pos
-            size: self.size
-        Color:
-            rgb: 0.5843137254901961, 0.5843137254901961, 0.5843137254901961
-    Label:
+    BoxLayout:
+        orientation: 'vertical'
         canvas:
-            Color:
-                rgba: 0.0, 0.9, 0.1, 0.6
             Rectangle:
                 pos: self.pos
                 size: self.size
-        color: (1.0, 0.2, 0.2, 1)
-        outline_color: (1, 0, 0)
-        size_hint: (1, .1)
-        text_size: root.width, None
-        padding_x: 10
-        halign: 'left'
-        valign: 'middle'
-        text: 'Closely recalls:'
-    RecycleView:
-		id: rv
-		size_hint: (1, .8)
-	    key_size: 'height'
-    	key_viewclass: 'viewclass'
-		RecycleBoxLayout:
-            id: box
-            default_size: None, None
-            default_size_hint: 1, None
-            size_hint_y: None
-            height: self.minimum_height
-            orientation: 'vertical'
-            spacing: dp(10)
-            padding: dp(5)
-    BoxLayout:
-        orientation: 'horizontal'
-        size_hint: (1, .1)
-        Button:
-            text: 'Goto About'
-            #on_press:
-            #    root.manager.transition.direction = 'right'
-            #    root.manager.current = 'settings'
-        Button:
-            text: 'Quit'
+            Color:
+                rgb: 0.5843137254901961, 0.5843137254901961, 0.5843137254901961
+        Label:
+            canvas:
+                Color:
+                    rgba: 0.0, 0.9, 0.1, 0.6
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            color: (1.0, 0.2, 0.2, 1)
+            outline_color: (1, 0, 0)
+            size_hint: (1, .1)
+            text_size: root.width, None
+            padding_x: 10
+            halign: 'left'
+            valign: 'middle'
+            text: 'Closely recalls:'
+        RecycleView:
+		    id: rv
+    		size_hint: (1, .8)
+	        key_size: 'height'
+    	    key_viewclass: 'viewclass'
+    		RecycleBoxLayout:
+                id: box
+                default_size: None, None
+                default_size_hint: 1, None
+                size_hint_y: None
+                height: self.minimum_height
+                orientation: 'vertical'
+                spacing: dp(10)
+                padding: dp(5)
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: (1, .1)
+            Button:
+                text: 'Goto About'
+                #on_press:
+                #    root.manager.transition.direction = 'right'
+                #    root.manager.current = 'settings'
+            Button:
+                text: 'Quit'
