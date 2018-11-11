@@ -24,5 +24,5 @@ class RecentScreen(Screen):
             })
         self.ids.rv.data = listitems
 
-    def switch_screen(self, screen_name):
-        App.get_running_app().switch_screen(screen_name)
+    def switch_screen(self, screen_name, trans_dir):
+        App.get_running_app().switch_screen(screen_name, trans_dir)

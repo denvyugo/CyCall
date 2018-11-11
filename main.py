@@ -1,6 +1,6 @@
 from kivy.app import App
 #from kivy.properties import ObjectProperty
-from kivy.uix.screenmanager import ScreenManagerException
+from kivy.uix.screenmanager import ScreenManagerException, SlideTransition
 
 from screenmanager import scrn_mangr, screens
 #from uix.recentscrn import RecentScreen
@@ -14,9 +14,11 @@ class CyCalling(App):
         self.screen_manager = scrn_mangr
         self.switch_screen('main')
 
-    def switch_screen(self, screen_name):
+    def switch_screen(self, screen_name, trans_dir=''):
         if screen_name in screens:
             screen = screens[screen_name](name=screen_name)
+            if len(trans_dir)>0:
+                self.screen_manager.transition.direction = trans_dir
             self.screen_manager.switch_to(screen)
             return
         else:

@@ -12,5 +12,5 @@ class AboutScreen(Screen):
 
     Builder.load_file(f'{puix}\\uix\\about.kv')
 
-    def switch_screen(self, screen_name):
-        App.get_running_app().switch_screen(screen_name)
+    def switch_screen(self, screen_name, trans_dir):
+        App.get_running_app().switch_screen(screen_name, trans_dir)
