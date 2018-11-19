@@ -4,23 +4,21 @@ from kivy.lang import Builder
 from kivy.metrics import dp
 from kivy.properties import ObjectProperty
 import os
-from data.recalldb import Recall, RecallDB
 
 puix = os.getcwd()
 
 class RecentScreen(Screen):
     '''экран списка напоминаний'''
     events_callback = ObjectProperty(None)
-    rdb = RecallDB()
     Builder.load_file(f'{puix}\\uix\\recentscrn.kv')
 
     def __init__(self, **kwargs):
         super(RecentScreen, self).__init__(**kwargs)
         listitems=[]
-        recalls = self.rdb.recent()
+        recalls = App.get_running_app().recent()
         for rc in recalls:
             listitems.append({
-                'item_text': rc.description,
+                'item_text': rc,
                 'viewclass': 'Item',
                 'height': dp(40)
             })
@@ -29,6 +27,5 @@ class RecentScreen(Screen):
     def switch_screen(self, screen_name, trans_dir):
         App.get_running_app().switch_screen(screen_name, trans_dir)
 
-    def quit(self):
-        self.rdb.closedb()
-        App.get_running_app().stop()
+    def exit(self):
+        App.get_running_app().quit()

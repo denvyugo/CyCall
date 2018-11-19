@@ -14,3 +14,6 @@ class AboutScreen(Screen):
 
     def switch_screen(self, screen_name, trans_dir):
         App.get_running_app().switch_screen(screen_name, trans_dir)
+
+    def exit(self):
+        App.get_running_app().quit()
