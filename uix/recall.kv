@@ -1,0 +1,49 @@
+<RecallScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+            Color:
+                rgb: 0.5843137254901961, 0.5843137254901961, 0.5843137254901961
+        Label:
+            canvas:
+                Color:
+                    rgba: 0.0, 0.9, 0.1, 0.6
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            color: (1.0, 0.2, 0.2, 1)
+            outline_color: (1, 0, 0)
+            size_hint: (1, .1)
+            text_size: root.width, None
+            padding_x: 10
+            halign: 'left'
+            valign: 'middle'
+            text: 'CyCall: new recall'
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (1, .8)
+            TextInput:
+                id: desc
+                multiline: True
+                hint_text: 'Описание события, напоминания'
+            TextInput:
+                id: begn
+                multiline: False
+                hint_text: 'Дата, время начала события YYYY-MM-DD HH:MM'
+            TextInput:
+                id: perd
+                multiline: False
+                hint_text: 'Период повторения N (Y/M/D/H/m)'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: (1, .1)
+            Button:
+                text: 'Goto Recent'
+                on_press:
+                    root.switch_screen('main', 'left')
+            Button:
+                text: 'Quit'
+                on_press: root.exit()

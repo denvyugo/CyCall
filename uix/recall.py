@@ -1,0 +1,19 @@
+from kivy.app import App
+from kivy.uix.screenmanager import Screen
+from kivy.lang import Builder
+from kivy.properties import ObjectProperty
+import os
+
+puix = os.getcwd()
+
+class RecallScreen(Screen):
+    '''Экран создания напоминания'''
+    events_callback = ObjectProperty(None)
+
+    Builder.load_file(f'{puix}\\uix\\recall.kv')
+
+    def switch_screen(self, screen_name, trans_dir):
+        App.get_running_app().switch_screen(screen_name, trans_dir)
+
+    def exit(self):
+        App.get_running_app().quit()
