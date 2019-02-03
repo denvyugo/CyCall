@@ -20,3 +20,14 @@ class Cycall():
     def checkrecall(self):
         # check if there is some recall for that moment
         pass
+
+    def addrecall(self):
+        # add new event to recall base
+        dscr = 'Some new event'
+        strt = '2019-02-04 12:00'
+        perd = 360000
+        call = '2019-02-04 12:00'
+        rcl = Recall(strt, perd, call, dscr)
+        print('something to add to database')
+        self.rdb.add_recall(rcl)
+        pass

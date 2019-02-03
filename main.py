@@ -40,6 +40,12 @@ class CyCalling(App):
         self.cyl.close() # say close to Presenter
         app.stop()
 
+    def addrecall(self):
+        self.cyl.addrecall()
+        self.switch_screen('main', 'left')
+
+
+
 
 if  __name__ == '__main__':
     app = CyCalling()

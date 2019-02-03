@@ -9,8 +9,8 @@ class Recall:
     def __init__(self, start, period, call, description, number=0):
         self.number = number
         self.start = start
-        self.period = period
-        self.call = call
+        self.period = period # period of repeating of event in whole number of minutes
+        self.call = call # date & time when the reminder is on
         self.description = description
 
 class RecallDB:
@@ -49,7 +49,7 @@ class RecallDB:
     def recent(self, sday=''):
         # get proximate recalls
         if len(sday) == 0:
-            sql = 'select * from CyCall order by Call limit ?'
+            sql = 'select * from CyCall order by Call desc limit ?'
             prms = (LIMITRECALLS,)
         else:
             sql = 'select * from CyCall where date(Call) = ? order by Call limit ?'

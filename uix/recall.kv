@@ -28,7 +28,7 @@
             TextInput:
                 id: desc
                 multiline: True
-                hint_text: 'Описание события, напоминания'
+                hint_text: 'Описание события, напоминание'
             TextInput:
                 id: begn
                 multiline: False
@@ -41,9 +41,9 @@
             orientation: 'horizontal'
             size_hint: (1, .1)
             Button:
-                text: 'Goto Recent'
+                text: 'Добавить'
                 on_press:
-                    root.switch_screen('main', 'left')
+                    root.new_recall()
             Button:
-                text: 'Quit'
-                on_press: root.exit()
+                text: 'Назад'
+                on_press: root.switch_screen('main', 'left')
