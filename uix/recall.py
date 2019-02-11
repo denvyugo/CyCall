@@ -7,7 +7,7 @@ import os
 puix = os.getcwd()
 
 class RecallScreen(Screen):
-    '''Экран создания напоминания'''
+    """Screen for new recall"""
     events_callback = ObjectProperty(None)
     fkv = f'{puix}\\uix\\recall.kv'
     with open(fkv, encoding='utf-8') as f:
@@ -22,4 +22,7 @@ class RecallScreen(Screen):
         App.get_running_app().quit()
 
     def new_recall(self):
-        App.get_running_app().addrecall()
+        descr = self.ids.desc.text
+        strt= self.ids.begn.text
+        period = self.ids.perd.text
+        App.get_running_app().addrecall(describe=descr, start=strt, period=period)

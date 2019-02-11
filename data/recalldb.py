@@ -24,6 +24,7 @@ class RecallDB:
         print('close db')
         self._cnn.close()
 
+
     def add_recall(self, recall):
         # get last number
         sql = 'select ID from CyCall order by ID desc limit 1'
@@ -37,6 +38,7 @@ class RecallDB:
                 recall.number = numb[0] + 1
             else:
                 recall.number = 1
+
         sql = 'insert into CyCall (ID, Start, Period, Call, Description) values \
                 (?, ?, ?, ?, ?)'
         try:
@@ -46,6 +48,7 @@ class RecallDB:
         else:
             self._cnn.commit()
 
+
     def recent(self, sday=''):
         # get proximate recalls
         if len(sday) == 0:
@@ -54,6 +57,7 @@ class RecallDB:
         else:
             sql = 'select * from CyCall where date(Call) = ? order by Call limit ?'
             prms = (sday, LIMITRECALLS)
+
         try:
             self._cur.execute(sql, prms)
             result = self._cur.fetchall()

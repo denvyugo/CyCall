@@ -28,22 +28,22 @@
             TextInput:
                 id: desc
                 multiline: True
-                hint_text: 'Описание события, напоминание'
+                hint_text: 'Description of event'
             TextInput:
                 id: begn
                 multiline: False
-                hint_text: 'Дата, время начала события YYYY-MM-DD HH:MM'
+                hint_text: 'Date, time of event YYYY-MM-DD HH:MM'
             TextInput:
                 id: perd
                 multiline: False
-                hint_text: 'Период повторения N (Y/M/D/H/m)'
+                hint_text: 'Period of cycling N (Y/M/W/D/H/m)'
         BoxLayout:
             orientation: 'horizontal'
             size_hint: (1, .1)
             Button:
-                text: 'Добавить'
+                text: 'Add'
                 on_press:
                     root.new_recall()
             Button:
-                text: 'Назад'
+                text: 'Back'
                 on_press: root.switch_screen('main', 'left')
